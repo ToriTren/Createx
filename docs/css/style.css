@@ -33,20 +33,22 @@ html, body{
 }
 
 .button__grd{
-  border: 1px solid transparent;
-  background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
-  box-shadow: inset 0px 0px 0px 100vw #fff;
-  border-radius: 4px;
-  padding: 0px 40px;
-  display: inline-block;
-  line-height: 49px;
-  transition: 1s;
-}
+    background-image: none;
+    border-left: 2px solid #FF3F3A;
+    border-right: 2px solid #F75E05;
+    background-image: -webkit-linear-gradient(left, #FF3F3A, #F75E05), -webkit-linear-gradient(left, #FF3F3A, #F75E05);
+    background-image: linear-gradient(left, #FF3F3A, #F75E05), linear-gradient(left, #FF3F3A, #F75E05);
+    background-size: 100% 2px;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+  }
+
 .button__grd span{
-  background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    background: -webkit-linear-gradient(left, #FF3F3A, #F75E05);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
 .button__grd:hover{
   transform: scale(1.05);
@@ -71,6 +73,9 @@ html, body{
   line-height: 130%;
 }
 
+.heading--text-center{
+  text-align: center;
+}
 /* ---HEADER----------------------------- */
 
 .header{
@@ -242,7 +247,7 @@ html, body{
   margin: 0 15px;
 }
 
-/* ---ABOUT--------- */
+/* ---ABOUT------------------------------------------ */
 
 .about{
   padding: 160px 0 160px;
@@ -342,4 +347,180 @@ line-height: 160%;
   letter-spacing: 1px;
   margin-right: 16px;
   color: #FF3F3A
+}
+
+/* --- DIRECTIONS------------------------------------------ */
+
+.directions{
+  padding-bottom: 180px;
+}
+
+.directions__inner{
+  position: relative;
+}
+
+.directions__inner::before{
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -190px;
+  width: 136px;
+  height: 115px; 
+  background: url(../img/decor/directions1.svg) 0 0 no-repeat;
+}
+
+.directions__inner::after{
+  content: "";
+  position: absolute;
+  top: 400px;
+  right: -400px;
+  width: 242px;
+  height: 242px; 
+  background: url(../img/decor/directions2.svg) 0 0 no-repeat;
+  opacity: .12;
+}
+
+.directions__heading{
+  margin-bottom: 90px;
+}
+
+.directions__filter-box{
+  display: flex;
+  margin-bottom: 56px;
+}
+
+.directions__filter-item{
+  margin-right: 45px;
+}
+
+.directions__filter-item:last-child{
+  margin-right: 0;
+}
+
+.directions__filter-btn{
+  background-color: transparent;
+  color: #9A9CA5;
+  border: 1px solid #9A9CA5;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 5px 7px;
+}
+
+.directions__filter-btn--active{
+  background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%); 
+  border: none;
+  color: #FFFFFF;
+  padding: 6px 6px;
+}
+
+.directions__list{
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(3, 1fr);
+  gap: 30px;
+}
+
+.directions__list-item{
+  border-radius: 4px;
+}
+
+.directions__list-link{
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all .3s;
+} 
+
+.directions__list-link:hover{
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  color: #FF3F3A;
+}
+
+.directions__list-link:hover .directions__link-btn{
+  color: #FF3F3A;
+}
+
+.directions__image-box img{
+  width: 100%;
+  height: 100%; 
+}
+
+.directions__link-content{
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E5E8ED;
+  border-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.directions__link-tag{
+  line-height: 1;
+  font-weight: 700;
+  color: #FFFFFF;
+  padding: 6px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+.directions__link-text{
+  color: #787A80;
+  font-weight: 400;
+  line-height: 160%;
+  margin-bottom: 20px;
+}
+
+.directions__link-btn{
+  color: #1E212C;
+  font-weight: 700;
+  line-height: 160%;
+  display: flex;
+  transition: all .3s;
+}
+
+.directions__link-btn::after{
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/icons/arrow_right.svg) 0 2px, 100% no-repeat;
+  margin-left: 11px;
+}
+
+.directions__list-item-empty{
+  background: #F4F5F7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.directions__list-item-empty span{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  max-width: 240px;
+}
+
+.directions__list-item--marketing .directions__link-tag{
+  background-color: #03CEA4;;
+}
+
+.directions__list-item--management .directions__link-tag{
+  background-color: #5A87FC;;
+}
+
+.directions__list-item--hr .directions__link-tag{
+  background-color: #F89828;;
+}
+
+.directions__list-item--design .directions__link-tag{
+  background-color: #F52F6E;;
+}
+
+.directions__list-item--development .directions__link-tag{
+  background-color: #7772F1;;
 }
