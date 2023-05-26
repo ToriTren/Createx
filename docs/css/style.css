@@ -751,6 +751,10 @@ line-height: 160%;
   height: 816px;
 }
 
+.testimonials__inner{
+  position: relative;
+  z-index: 1;
+}
 .testimonials__heading{
   margin-bottom: 60px;
 }
@@ -761,7 +765,7 @@ line-height: 160%;
   margin-bottom: 50px;
 }
 
-.etstimonials__slider{
+.testimonials__slider{
   max-width: 1020px;
   margin: 0 auto;
 }
