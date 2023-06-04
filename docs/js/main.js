@@ -67,4 +67,11 @@ $('.program__acc-link').on('click', function(e){
 })
 
 
+$(".header__list a, .header__main-btn, .footer__go-top").on("click", function (e) {
+    e.preventDefault()
+    var id  = $(this).attr('href'),
+    top = $(id).offset().top - 100
+    $('body,html').animate({scrollTop: top}, 1500)
+});
+  
 })
