@@ -97,13 +97,13 @@ $(".header__list a, .header__main-btn, .footer__go-top").on("click", function (e
     $('body,html').animate({scrollTop: top}, 1500)
 })
 
-setInterval(() => {
+$(window).on('scroll', function () {
   if ($(window).scrollTop() > 0 && $('.header__top').hasClass('header__top-open') === false) {
     $('.burger').addClass('burger--follow')
   } else {
     $('.burger').removeClass('burger--follow')
   }
-}, 0)
+})
 
 $('.burger, .overlay').on('click',function (e){
   e.preventDefault()
@@ -116,5 +116,6 @@ $('.burger').on('click',function (e){
   e.preventDefault()
   $('.burger').toggleClass('active')
 })
+
 
 })
