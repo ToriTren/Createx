@@ -23,6 +23,29 @@ $('.team__slider').slick({
   infinite: true,
   draggable: false,
   waitForAnimate: false,
+  responsive:
+  [
+    {
+      breakpoint: 1100,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 750,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+        draggable: true,
+        dots: true,
+      },
+    },
+  ]
 })
 $('.team__slider-prev').on('click', function(e){
   e.preventDefault()
